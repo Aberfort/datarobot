@@ -1,0 +1,47 @@
+.gform_fields {
+	margin: 0;
+}
+
+.gfield {
+	list-style: none;
+}
+
+.gfield_label {
+	display: none;
+}
+
+.gfield_error {
+	input, textarea {
+		border-color: red;
+	}
+}
+
+.gform_confirmation_message {
+	margin-bottom: 15px;
+}
+
+.gform_footer {
+	text-align: right; /*aligning of submit button*/
+}
+
+.validation_error {
+	margin-bottom: 15px;
+	padding: 5px;
+	color: darken(red, 20);
+	border: 1px solid red;
+}
+
+.validation_message {
+	margin-bottom: 10px;
+	color: darken(red, 20);
+}
+
+button, .button, input[type='submit'], input[type='reset'] {
+	background-color: $main-color;
+	font-family: $font;
+	padding: 10px 20px;
+	@include transition(all .3s ease);
+	&:hover, &:focus {
+		background-color: darken($main-color, 10);
+	}
+}

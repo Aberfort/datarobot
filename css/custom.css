@@ -1,0 +1,395 @@
+/* -----------------------------------------
+   Home page slider
+----------------------------------------- */
+#home-slider .slider-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  padding: 5px 10px;
+}
+#home-slider .slider-caption p, #home-slider .slider-caption h3 {
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (max-width: 640px) {
+  #home-slider .slider-caption {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    background: #000;
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  #home-slider .slider-caption p {
+    font-size: 12px;
+    text-shadow: none;
+    font-weight: 600;
+  }
+  #home-slider .slick-prev, #home-slider .slick-next {
+    display: none !important;
+  }
+}
+/* -----------------------------------------
+   WordPress Core Classes
+----------------------------------------- */
+.alignnone {
+  margin: 0 1em 1em 0;
+}
+
+.alignright {
+  float: right;
+  margin: 0 0 1em 1em;
+}
+
+.alignleft {
+  float: left;
+  margin: 0 1em 1em 0;
+}
+
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wp-caption {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  max-width: 96%;
+  /* Image does not overflow the content area */
+  padding: 5px 3px 10px;
+  text-align: center;
+}
+.wp-caption img {
+  border: 0 none;
+  height: auto;
+  margin: 0;
+  max-width: 98.5%;
+  padding: 0;
+  width: auto;
+}
+.wp-caption.alignnone {
+  margin: 0 1em 1em 0;
+}
+.wp-caption.alignleft {
+  float: left;
+  margin: 0 1em 1em 0;
+}
+.wp-caption.alignright {
+  float: right;
+  margin: 0 0 1em 1em;
+}
+#wpadminbar {
+  opacity: 0.3;
+  transition: 0.2s opacity linear;
+  -webkit-transform: translateZ(0);
+}
+#wpadminbar:hover, #wpadminbar:focus {
+  opacity: 1;
+}
+
+/* -----------------------------------------
+   General fixes
+----------------------------------------- */
+html,body{
+	height: auto;
+}
+html{
+	min-height: 100%;
+	position: relative;
+}
+body {
+	-webkit-font-smoothing: antialiased;
+  position: static;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=button] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* Placeholder styling */
+input:-moz-placeholder, textarea:-moz-placeholder {
+  color: #555;
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color: #555;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  color: #555;
+}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: #555;
+}
+
+/* Input Styling */
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea {
+  /* STYLES GO THERE */
+}
+
+textarea[rows] {
+  /*Styles for TextArea*/
+}
+
+/* Responsive video container (YouTube, Vimeo) */
+embed, iframe, object {
+  max-width: 100%;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+.video-container iframe, .video-container object, .video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Align Middle */
+.align-middle {
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+/* -----------------------------------------
+   Typography
+----------------------------------------- */
+a:focus {
+  outline: none;
+}
+
+p:empty {
+  display: none;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, a {
+  font-family: "Open Sans", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+}
+
+img.alignright {
+  float: right;
+  margin: 0 0 1em 1em;
+}
+
+img.alignleft {
+  float: left;
+  margin: 0 1em 1em 0;
+}
+
+img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* -----------------------------------------
+    Clearfix
+----------------------------------------- */
+.clearfix {
+  zoom: 1;
+}
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+  height: 0;
+  overflow: hidden;
+}
+.clearfix:after {
+  clear: both;
+}
+
+/* ------------------------------------
+    Basic Styles
+------------------------------------- */
+h1 {
+  /*basic heading styles*/
+}
+
+h2 {
+  /*basic heading styles*/
+}
+
+h3 {
+  /*basic heading styles*/
+}
+
+h4 {
+  /*basic heading styles*/
+}
+
+h5 {
+  /*basic heading styles*/
+}
+
+h6 {
+  /*basic heading styles*/
+}
+
+p {
+  /*basic paragraph styles*/
+}
+p a {
+  text-decoration: underline;
+}
+
+ul {
+  /*basic list styles*/
+}
+ul li {
+  /*basic list-item styles*/
+}
+
+a {
+  color: #1a608b;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+a:hover, a:focus {
+  /*basic hover and focus effects*/
+  color: #0a2535;
+}
+
+.button {
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.button:hover, .button:focus {
+  /*basic hover and focus effects*/
+}
+
+/*-------------------------------
+        Paginator
+-------------------------------*/
+ul.pagination li a {
+  padding: 0 7px;
+  border-radius: 0;
+}
+
+.pagination.current {
+  color: #fff;
+  background: #1a608b;
+  padding: 1px 7px 2px 7px;
+}
+
+/* ------------------------------------
+    Header Styles
+------------------------------------- */
+/* ------------------------------------
+    Content Styles
+------------------------------------- */
+/* -----------------------------------------
+    Contact Form
+----------------------------------------- */
+/*basic Gravity Form styles and fixes, if you dont need/use this comment or delete styles below*/
+.gform_fields {
+  margin: 0;
+}
+
+.gfield {
+  list-style: none;
+}
+
+.gfield_label {
+  display: none;
+}
+
+.gfield_error input, .gfield_error textarea {
+  border-color: red;
+}
+
+.gform_confirmation_message {
+  margin-bottom: 15px;
+}
+
+.gform_footer {
+  text-align: right;
+  /*aligning of submit button*/
+}
+
+.validation_error {
+  margin-bottom: 15px;
+  padding: 5px;
+  color: #990000;
+  border: 1px solid red;
+}
+
+.validation_message {
+  margin-bottom: 10px;
+  color: #990000;
+}
+
+button, .button, input[type='submit'], input[type='reset'] {
+  background-color: #1a608b;
+  font-family: "Open Sans", sans-serif;
+  padding: 10px 20px;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+button:hover, button:focus, .button:hover, .button:focus, input[type='submit']:hover, input[type='submit']:focus, input[type='reset']:hover, input[type='reset']:focus {
+  background-color: #124260;
+}
+
+/* ------------------------------------
+    Footer Styles
+------------------------------------- */
+.footer{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+/*# sourceMappingURL=custom.css.map */
