@@ -153,6 +153,7 @@ function foundation_scripts_and_styles() {
 	//core
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'foundation.min', get_template_directory_uri() . '/js/foundation.min.js', null, null, true );
+	wp_enqueue_script( 'isotope', get_template_directory_uri() . '/js/plugins/isotope.min.js', null, null, true );
 
 //    wp_enqueue_script( 'google.maps.api', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAs19C89zcw7bQ12hJEKgtPGK9Q8iuLkQ4&v=3.exp', null, null, true );
 

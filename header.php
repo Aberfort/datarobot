@@ -31,7 +31,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
 
 	<!-- Add Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
 	<?php wp_head(); ?>
 </head>
@@ -46,20 +48,7 @@
 				</div><!--end of .logo -->
 			</div><!--end of .columns -->
 			<div class="large-8 medium-8 small-12 columns">
-				<nav class="top-bar" data-topbar="" role="navigation" data-options="{is_hover: false, mobile_show_parent_link: true}">
 
-					<ul class="title-area">
-						<li class="name"></li>
-						<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-					</ul><!-- END of .top-bar -->
-					<section class="top-bar-section">
-						<?php
-						if (has_nav_menu('header-menu')) {
-							wp_nav_menu( array( 'theme_location' => 'header-menu', 'fallback_cb' => 'foundation_page_menu', 'walker' => new foundation_navigation() ) );
-						}
-						?>
-					</section><!-- END of .top-bar-section -->
-				</nav>
 			</div><!-- END of .columns -->
 		</div><!-- END of .row -->
 	</header><!--END of header -->
