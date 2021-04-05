@@ -42,7 +42,7 @@
 		<div class="row large-uncollapse medium-uncollapse small-collapse">
 			<div class="large-4 medium-4 small-12 columns">
 				<div class="logo small-only-text-center">
-					<a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><img src="<?php echo get_header_image(); ?>" alt="<?php bloginfo('name'); ?>"/></a>
+					<a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"></a>
 				</div><!--end of .logo -->
 			</div><!--end of .columns -->
 			<div class="large-8 medium-8 small-12 columns">

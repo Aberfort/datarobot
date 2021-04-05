@@ -132,9 +132,6 @@ add_theme_support( 'html5', array( 'comment-list', 'search-form', 'comment-form'
 				Enqueue Scripts and Styles for Front-End
 *******************************************************************************************************************************/
 
-//Run Sick slider on HOME page
-include_once(TEMPLATEPATH . '/inc/home-slider.php');
-
 
 function foundation_scripts_and_styles() {
 	if (!is_admin()) {
@@ -146,8 +143,6 @@ function foundation_scripts_and_styles() {
 
 	//plugins
 	wp_enqueue_style( 'font-awesome.min', get_template_directory_uri().'/css/plugins/font-awesome.min.css', null, null );
-	wp_enqueue_style( 'slick', get_template_directory_uri().'/css/plugins/slick.css', null, null );
-	wp_enqueue_style( 'jquery.fancybox', get_template_directory_uri().'/css/plugins/jquery.fancybox.css', null, null );
 
 	//system
 	wp_enqueue_style( 'custom', get_template_directory_uri().'/css/custom.css', null, null );/*3rd priority*/
@@ -159,11 +154,6 @@ function foundation_scripts_and_styles() {
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'foundation.min', get_template_directory_uri() . '/js/foundation.min.js', null, null, true );
 
-	//plugins
-	wp_enqueue_script( 'respond', get_template_directory_uri() . '/js/plugins/respond.js', null, null, true );
-	wp_enqueue_script( 'slick', get_template_directory_uri() . '/js/plugins/slick.min.js', null, null, true );
-	wp_enqueue_script( 'jquery.matchHeight-min', get_template_directory_uri() . '/js/plugins/jquery.matchHeight-min.js', null, null, true );
-	wp_enqueue_script( 'jquery.fancybox.pack', get_template_directory_uri() . '/js/plugins/jquery.fancybox.pack.js', null, null, true );
 //    wp_enqueue_script( 'google.maps.api', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAs19C89zcw7bQ12hJEKgtPGK9Q8iuLkQ4&v=3.exp', null, null, true );
 
 	//custom javascript
@@ -186,108 +176,6 @@ add_action( 'wp_enqueue_scripts', 'foundation_scripts_and_styles' );
 /******************************************************************************
 				Additional Functions
 *******************************************************************************/
-// Register Post Type Slider
-	function post_type_slider() {
-	$post_type_slider_labels = array(
-		'name'               => _x( 'Slider', 'post type general name' ),
-		'singular_name'      => _x( 'Slide', 'post type singular name' ),
-		'add_new'            => _x( 'Add New', 'slide' ),
-		'add_new_item'       => __( 'Add New' ),
-		'edit_item'          => __( 'Edit' ),
-		'new_item'           => __( 'New ' ),
-		'all_items'          => __( 'All' ),
-		'view_item'          => __( 'View' ),
-		'search_items'       => __( 'Search for a slide' ),
-		'not_found'          => __( 'No slides found' ),
-		'not_found_in_trash' => __( 'No slides found in the Trash' ),
-		'parent_item_colon'  => '',
-		'menu_name'          => 'Slider'
-	);
-	$post_type_slider_args = array(
-		'labels'        => $post_type_slider_labels,
-		'description'   => 'Display Slider',
-		'public'        => true,
-		'menu_icon'		 => 'dashicons-format-gallery',
-		'menu_position' => 5,
-		'supports'      => array( 'title', 'thumbnail', 'page-attributes', 'editor' ),
-		'has_archive'   => true,
-		'hierarchical'  => true
-	);
-	register_post_type( 'slider', $post_type_slider_args );
-	}
-	add_action( 'init', 'post_type_slider' );
-
-
-// Install Recommended plugins
-	require_once dirname( __FILE__ ) . '/inc/plugin-activation.php';
-
-	function my_theme_register_required_plugins() {
-		$plugins = array(
-			/** This is an example of how to include a plugin pre-packaged with a theme */
-			array(
-				'name'     => 'Advanced Custom Fields Pro (b3JkZXJfaWQ9NTU1MDd8dHlwZT1kZXZlbG9wZXJ8ZGF0ZT0yMDE1LTA1LTA2IDExOjUzOjM1)', // The plugin name
-				'slug'     => 'advanced-custom-fields-pro', // The plugin slug (typically the folder name)
-				'source'   => 'http://ready-for-feedback2.com/plugins/advanced-custom-fields-pro.zip', // The plugin source
-				'required' => false,
-			),
-			array(
-				'name'     => 'ACF Gravity Forms field', // The plugin name
-				'slug'     => 'Gravity-Forms-ACF-Field-master', // The plugin slug (typically the folder name)
-				'source'   => 'http://ready-for-feedback2.com/plugins/acf-gravity-forms-field.zip', // The plugin source
-				'required' => false,
-			),
-			array(
-				'name'     => 'Custom Post Type UI', // The plugin name
-				'slug'     => 'custom-post-type-ui', // The plugin slug (typically the folder name)
-				'source'   => 'https://downloads.wordpress.org/plugin/custom-post-type-ui.1.4.3.zip', // The plugin source
-				'required' => false,
-			),
-			array(
-				'name'     => 'Gravity Forms (86a265e9644d0b79e4ccce71a582fc7e)', // The plugin name
-				'slug'     => 'gravityforms', // The plugin slug (typically the folder name)
-				'source'   => 'http://ready-for-feedback2.com/plugins/gravityforms.zip', // The plugin source
-				'required' => false,
-			),
-			array(
-				'name'     => 'Login LockDown', // The plugin name
-				'slug'     => 'login-lockdown', // The plugin slug (typically the folder name)
-				'source'   => 'https://downloads.wordpress.org/plugin/login-lockdown.1.7.1.zip', // The plugin source
-				'required' => false,
-			),
-			array(
-				'name'     => 'Yoast SEO', // The plugin name
-				'slug'     => 'wordpress-seo', // The plugin slug (typically the folder name)
-				'source'   => 'https://downloads.wordpress.org/plugin/wordpress-seo.4.0.2.zip', // The plugin source
-				'required' => false,
-			),
-			array(
-				'name'     => 'Google Analytics by MonsterInsights', // The plugin name
-				'slug'     => 'google-analytics-for-wordpress', // The plugin slug (typically the folder name)
-				'source'   => 'https://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.5.4.zip', // The plugin source
-				'required' => false,
-			),
-			array(
-				'name'     => 'WordPress Duplicator', // The plugin name
-				'slug'     => 'duplicator', // The plugin slug (typically the folder name)
-				'source'   => 'https://downloads.wordpress.org/plugin/duplicator.1.1.26.zip', // The plugin source
-				'required' => false,
-			),
-			array(
-				'name'     => 'Black Studio TinyMCE Widget', // The plugin name
-				'slug'     => 'black-studio-tinymce-widget', // The plugin slug (typically the folder name)
-				'source'   => 'https://downloads.wordpress.org/plugin/black-studio-tinymce-widget.2.3.1.zip', // The plugin source
-				'required' => false,
-			),
-			array(
-				'name'     => 'UserSnap', // The plugin name
-				'slug'     => 'usersnap', // The plugin slug (typically the folder name)
-				'source'   => 'https://downloads.wordpress.org/plugin/usersnap.4.4.zip', // The plugin source
-				'required' => false,
-			)
-		);
-		tgmpa( $plugins );
-	}
-	add_action( 'tgmpa_register', 'my_theme_register_required_plugins' );
 
 // Stick Admin Bar To The Top
 	if (!is_admin()) {
